@@ -1,0 +1,9 @@
+import pymysql
+connection = pymysql.connect(host="localhost", user="root", passwd="", database="python_test1")
+cursor = connection.cursor()
+# queries for inserting values
+insert1 = "INSERT INTO email_data( `From`, `To`, `body`,`check`) VALUES ('sagor','fahim','conspiracy is important','0');"
+#INSERT INTO `email_data`( `From`, `To`, `body`) VALUES ('sago','fahim','hello how aree you')
+cursor.execute(insert1)
+connection.commit()
+connection.close()
